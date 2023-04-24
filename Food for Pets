@@ -1,0 +1,58 @@
+using System;
+
+namespace ConsoleApp9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int days = int.Parse(Console.ReadLine());
+            double totalFood = double.Parse(Console.ReadLine());
+
+            double foodEtenByDog = 0;
+            double foodEtenByCat = 0;
+            double biscuits = 0;
+
+            int dogEat = 0;
+            int catEat = 0;
+
+            
+
+            for(int i = 1; i <=days; i++)
+            {
+                dogEat = int.Parse(Console.ReadLine());
+                catEat = int.Parse(Console.ReadLine());
+
+                foodEtenByDog += dogEat;
+                foodEtenByCat += catEat;
+
+                int currentDayFood = dogEat + catEat;
+                
+
+                if(i%3==0)
+                {
+                    biscuits += currentDayFood * 0.1;
+                }
+
+            }
+
+            double percentageTotalFood = (((foodEtenByDog + foodEtenByCat) / totalFood) * 100);
+            double percentageDog=((foodEtenByDog/(foodEtenByCat+foodEtenByDog))*100);
+            double percentageCat = ((foodEtenByCat /(foodEtenByDog+foodEtenByCat)) * 100);
+
+            Console.WriteLine($"Total eaten biscuits: {(int)biscuits}gr.");
+            Console.WriteLine($"{percentageTotalFood:f2}% of the food has been eaten.");
+            Console.WriteLine($"{percentageDog:f2}% eaten from the dog.");
+            Console.WriteLine($"{percentageCat:f2}% eaten from the cat.");
+
+
+
+
+
+
+
+
+        }
+    }
+}
