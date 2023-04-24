@@ -1,0 +1,48 @@
+using System;
+
+namespace ConsoleApp9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int boughtFood = (int.Parse(Console.ReadLine()))*1000;
+            string input = String.Empty;
+            int totalFoodEten = 0;
+           
+           
+            while(input!="Adopted")
+            {
+                input = Console.ReadLine();
+                if(input=="Adopted")
+                {
+                    break;
+                }
+                int foodEtaten = int.Parse(input);
+                totalFoodEten+=foodEtaten;
+
+
+
+            }
+            double leftOvers = boughtFood - totalFoodEten;
+
+            if(totalFoodEten<=boughtFood)
+            {
+                Console.WriteLine($"Food is enough! Leftovers: {leftOvers} grams.");
+
+            }
+            else
+            {
+                Console.WriteLine($"Food is not enough. You need {totalFoodEten - boughtFood} grams more.");
+            }
+
+
+
+
+
+
+
+        }
+    }
+}
