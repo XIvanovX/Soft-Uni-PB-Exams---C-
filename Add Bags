@@ -1,0 +1,47 @@
+using System;
+
+namespace ConsoleApp10
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double priceLuggage20 = double.Parse(Console.ReadLine());
+            double kgLuggage = double.Parse(Console.ReadLine());
+            int daysTravel = int.Parse(Console.ReadLine());
+            int luggageCount=int.Parse(Console.ReadLine());
+
+            double price = 0;
+             
+            if(kgLuggage<=10)
+            {
+                price = priceLuggage20 * 0.2;
+            }
+            else if(kgLuggage>10 && kgLuggage<=20)
+            {
+                price = priceLuggage20 * 0.5;
+            }
+            else if(kgLuggage>20)
+            {
+                price = priceLuggage20;
+            }
+
+            if(daysTravel>30)
+            {
+                price *= 1.10;
+            }
+            else if(daysTravel>=7 && daysTravel<=30)
+            {
+                price *= 1.15;
+            }  
+            else if(daysTravel<7)
+            {
+                price *= 1.4;
+            }
+
+            double finalPrice = price * luggageCount;
+            Console.WriteLine($"The total price of bags is: {finalPrice:f2} lv.");
+
+        }
+    }
+}
