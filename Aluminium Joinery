@@ -1,0 +1,107 @@
+using System;
+
+namespace ConsoleApp10
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int joineryCount = int.Parse(Console.ReadLine());
+            string typeJoinery=Console.ReadLine();
+            string wayOfGetting = Console.ReadLine();
+            bool isLessThan10 = false;
+            
+            
+            
+
+
+            double price = 0;
+            
+            if (typeJoinery == "90X130")
+            {
+                price = 110;
+                if (joineryCount > 30 && joineryCount<=60)
+                {
+                    price *= 0.95;
+                }
+                else if (joineryCount > 60)
+                {
+                    price *= 0.92;
+                }
+
+            }
+            else if (typeJoinery == "100X150")
+            {
+                price = 140;
+                if (joineryCount > 40 && joineryCount<=80)
+                {
+                    price *= 0.94;
+                }
+                else if (joineryCount > 80)
+                {
+                    price *= 0.90;
+                }
+            }
+
+            else if (typeJoinery == "130X180")
+            {
+                price = 190;
+              
+                if (joineryCount > 20 && joineryCount<=50)
+                {
+                    price *= 0.93;
+                }
+                else if (joineryCount > 50)
+                {
+                    price *= 0.88;
+                }
+
+
+            }
+            
+            else if(typeJoinery=="200X300")
+            {
+                price = 250;
+                if (joineryCount > 25 && joineryCount<=50)
+                {
+                    price *= 0.91;
+                }
+                else if (joineryCount > 50)
+                {
+                    price *= 0.86;
+                }
+            }
+
+            double finalPrice = price * joineryCount;
+
+            if(wayOfGetting=="With delivery")
+            {
+                finalPrice += 60;
+            }    
+           
+
+           if(joineryCount>99)
+            {
+                finalPrice *= 0.96;
+            }
+
+
+           
+         
+           
+
+           if(joineryCount<10)
+            {
+                Console.WriteLine("Invalid order");
+
+            }
+            else
+            {
+                Console.WriteLine($"{finalPrice:f2} BGN");
+            }
+
+
+
+        }
+    }
+}
