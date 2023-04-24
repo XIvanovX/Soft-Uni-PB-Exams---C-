@@ -1,0 +1,37 @@
+using System;
+
+namespace ConsoleApp9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int bitCoinCount = int.Parse(Console.ReadLine());
+            double uanCount=double.Parse(Console.ReadLine());
+            double commision = double.Parse(Console.ReadLine());
+
+            double bitcoinToLeva = 1168;
+            double uanValue = (0.15 * 1.76);
+            double uantoLeva = uanValue * uanCount;
+
+            double totalLeva = (bitCoinCount * bitcoinToLeva) + (uanCount * uanValue);
+            double levaToEuro = totalLeva / 1.95;
+
+           
+          
+
+            double valueCommision = (commision / 100) * levaToEuro;
+            double finalAmmount = levaToEuro - valueCommision;
+
+            Console.WriteLine($"{finalAmmount:f2}");
+
+
+
+
+
+
+
+        }
+    }
+}
