@@ -1,0 +1,26 @@
+using System;
+
+namespace ConsoleApp9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double rentPlace = double.Parse(Console.ReadLine());
+
+            double priceCake = rentPlace * 0.2;
+            double priceDrinks = priceCake * 0.55;
+            double priceAnimator = rentPlace / 3;
+
+            double totalPrice = priceCake + priceAnimator + priceDrinks+rentPlace;
+
+            Console.WriteLine($"{totalPrice}");
+
+
+
+
+
+        }
+    }
+}
