@@ -1,0 +1,93 @@
+using System;
+
+namespace ConsoleApp12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string firstPlayer = Console.ReadLine();
+            string secondPlayer = Console.ReadLine();
+
+            string input = string.Empty;
+            int playerOnePoints = 0;
+            int playerTwoPoints = 0;
+
+            bool isNumberwars = false;
+
+            double drawDifference = 0;
+
+            bool isPlayerOneWinner = false;
+
+
+            while (input != "End of game")
+            {
+                input = Console.ReadLine();
+
+                if (input == "End of game")
+                {
+                    break;
+                }
+
+                int num2 = int.Parse(Console.ReadLine());
+
+                int num1 = int.Parse(input);
+
+                if (num1 > num2)
+                {
+                    playerOnePoints += num1 - num2;
+                }
+
+                else if (num1 < num2)
+                {
+                    playerTwoPoints += num2 - num1;
+                }
+
+                else if (num1 == num2)
+                {
+                    int drawPlayerOne = int.Parse(Console.ReadLine());
+                    int drawPlayerTwo = int.Parse(Console.ReadLine());
+                    isNumberwars = true;
+
+                    if (drawPlayerOne > drawPlayerTwo)
+                    {
+                        isPlayerOneWinner = true;
+                        
+                        break;
+
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                }
+
+
+
+
+            }
+
+            if (input == "End of game")
+            {
+                Console.WriteLine($"{firstPlayer} has {playerOnePoints} points");
+                Console.WriteLine($"{secondPlayer} has {playerTwoPoints} points");
+            }
+
+            else if (isNumberwars)
+            {
+                Console.WriteLine("Number wars!");
+
+                if (isPlayerOneWinner)
+                {
+                    Console.WriteLine($"{firstPlayer} is winner with {playerOnePoints} points");
+                }
+                else
+                {
+                    Console.WriteLine($"{secondPlayer} is winner with {playerTwoPoints} points");
+                }
+            }
+
+        }
+    }
+}
