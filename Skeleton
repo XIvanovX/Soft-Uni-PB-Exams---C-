@@ -1,1 +1,32 @@
+using System;
+
+namespace ConsoleApp11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int minutesQuota = int.Parse(Console.ReadLine());
+            int secondsQuata = int.Parse(Console.ReadLine());
+            double lenght = double.Parse(Console.ReadLine());
+            int seconds100meters = int.Parse(Console.ReadLine());
+
+            double totalTimeControl = (minutesQuota * 60) + secondsQuata;
+            double timeDelay = (lenght / 120) * 2.5;
+
+            double playerTime = (lenght / 100) * seconds100meters - timeDelay;
+
+            if(playerTime<=totalTimeControl)
+            {
+                Console.WriteLine($"Marin Bangiev won an Olympic quota!");
+                Console.WriteLine($"His time is {playerTime:f3}."); 
+            }
+            else
+            {
+                Console.WriteLine($"No, Marin failed! He was {playerTime - totalTimeControl:f3} seconds slower.");
+            }
+        }
+    }
+}
 
