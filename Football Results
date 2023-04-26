@@ -1,0 +1,93 @@
+using System;
+
+namespace ConsoleApp11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string firstGame = Console.ReadLine();
+            string secondGame = Console.ReadLine();
+            string thrdGame = Console.ReadLine();
+
+            char firstGameHome = firstGame[0];
+            int firstGameHomeResult = firstGameHome - 0;
+
+            char firstGameOthers = firstGame[2];
+            int firstGameOthersResult= firstGameOthers - 0;
+
+            char secondGameHome = secondGame[0];
+            int secondGameHomeResult = secondGameHome - 0;
+
+            char secondGameOthers= secondGame[2];
+            int secondGameOthersResult= secondGameOthers - 0;  
+
+
+            char thirdGameHome=thrdGame[0];
+            int thirdGameHomeResult= thirdGameHome - 0;
+
+            char thirdGameOthers = thrdGame[2];
+            int thirdGameOthersResult= thirdGameOthers - 0;
+
+            int gameWon = 0;
+            int gameLost = 0;
+            int gameDraft = 0;
+
+            if(firstGameHomeResult>firstGameOthersResult)
+            {
+                gameWon++;
+            } 
+            else if(firstGameHomeResult==firstGameOthersResult)
+            {
+                gameDraft++;
+            }
+            else
+            {
+                gameLost++;
+
+            }
+
+            if(secondGameHomeResult>secondGameOthersResult)
+            {
+                gameWon++;
+            }   
+            else if(secondGameHomeResult==secondGameOthersResult)
+            {
+                gameDraft++;
+            }
+            else
+            {
+                gameLost++;
+            }
+
+            if(thirdGameHomeResult>thirdGameOthersResult)
+            {
+                gameWon++;
+            }  
+            else if(thirdGameHomeResult==thirdGameOthersResult)
+            {
+                gameDraft++;
+
+            }
+            else
+            {
+                gameLost++;
+            }
+
+            Console.WriteLine($"Team won {gameWon} games.");
+            Console.WriteLine($"Team lost {gameLost} games.");
+            Console.WriteLine($"Drawn games: {gameDraft}");
+
+
+
+
+         
+
+                
+
+
+           
+        }
+    }
+}
