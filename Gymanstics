@@ -1,0 +1,91 @@
+using System;
+
+namespace ConsoleApp11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string country = Console.ReadLine();
+            string equipment= Console.ReadLine();
+
+            double difficulty = 0;
+            double act = 0;
+
+            switch(country)
+            {
+                case "Russia":
+                    if(equipment == "ribbon")
+                    {
+                        difficulty = 9.100;
+                        act = 9.400;
+                    }
+                    else if(equipment=="hoop")
+                        {
+                        difficulty = 9.300;
+                        act = 9.800;
+
+                    }
+                    else if(equipment=="rope")
+                    {
+                        difficulty = 9.600;
+                        act = 9.000;
+                    }
+
+                    break;
+                case "Bulgaria":
+                    if (equipment == "ribbon")
+                    {
+                        difficulty = 9.600;
+                        act = 9.400;
+                    }
+                    else if (equipment == "hoop")
+                    {
+                        difficulty = 9.550;
+                        act = 9.750;
+
+                    }
+                    else if (equipment == "rope")
+                    {
+                        difficulty = 9.500;
+                        act = 9.400;
+                    }
+                    break;
+                case "Italy":
+                    if (equipment == "ribbon")
+                    {
+                        difficulty = 9.200;
+                        act = 9.500;
+                    }
+                    else if (equipment == "hoop")
+                    {
+                        difficulty = 9.450;
+                        act = 9.350;
+
+                    }
+                    else if (equipment == "rope")
+                    {
+                        difficulty = 9.700;
+                        act = 9.150;
+                    }
+
+                    break;
+
+
+
+            }
+
+            double totalScore = difficulty + act;
+            double percentageNotEnough = ((20 - totalScore) / 20) * 100;
+
+            Console.WriteLine($"The team of {country} get {totalScore:f3} on {equipment}.");
+            Console.WriteLine($"{percentageNotEnough:f2}%");
+            
+
+
+
+
+        }
+    }
+}
