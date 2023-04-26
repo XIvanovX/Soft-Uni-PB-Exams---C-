@@ -1,0 +1,82 @@
+using System;
+
+namespace ConsoleApp12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string playerName=Console.ReadLine();
+
+            string input = string.Empty;
+
+            int points = 301;
+
+            int succesfullShots = 0;
+            int unsuccesfullShots = 0;
+
+            while(input!="Retire")
+            {
+                input = Console.ReadLine();
+
+                if(input=="Retire")
+                {
+                    break;
+                }
+                int shotPoints = int.Parse(Console.ReadLine());
+
+                if(shotPoints>points)
+                {
+                    unsuccesfullShots++;
+                    continue;
+                }
+
+                if(input=="Single")
+                {
+                    points-=shotPoints;
+                    
+                }
+                if(input=="Double")
+                {
+                    if ((shotPoints*2) > points)
+                    {
+                        unsuccesfullShots++;
+                        continue;
+                    }
+                    points -= shotPoints * 2;
+                }
+                if (input == "Triple")
+                {
+                    if ((shotPoints*3) > points)
+                    {
+                        unsuccesfullShots++;
+                        continue;
+                    }
+                    points -= shotPoints * 3;
+                }
+
+                succesfullShots++;
+
+                if(points==0)
+                {
+                    break;
+                }
+
+
+            }
+
+            if (points == 0)
+            {
+                Console.WriteLine($"{playerName} won the leg with {succesfullShots} shots.");
+            }
+            else
+            {
+                Console.WriteLine($"{playerName} retired after {unsuccesfullShots} unsuccessful shots.");
+            }
+
+          
+
+
+        }
+    }
+}
