@@ -1,0 +1,30 @@
+using System;
+
+namespace ConsoleApp11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double priceRocket = double.Parse(Console.ReadLine());
+            int countsRocket = int.Parse(Console.ReadLine());
+            int countsShoes = int.Parse(Console.ReadLine());
+
+            double priceShoes = (priceRocket / 6) * countsShoes;
+          
+            double priceOthers = ((priceRocket*countsRocket) + priceShoes) * 0.2;
+
+            double finalPrice = priceShoes + (priceRocket*countsRocket) + priceOthers;
+
+            double paidByJokovich = Math.Floor(finalPrice / 8);
+            double paidByTeam = Math.Ceiling((finalPrice / 8)*7);
+
+            Console.WriteLine($"Price to be paid by Djokovic {paidByJokovich}");
+            Console.WriteLine($"Price to be paid by sponsors {paidByTeam}");
+
+
+           
+        }
+    }
+}
