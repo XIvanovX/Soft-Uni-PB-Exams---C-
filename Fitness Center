@@ -1,0 +1,78 @@
+using System;
+
+namespace ConsoleApp12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            int count = int.Parse(Console.ReadLine());
+
+            int backTraining = 0;
+            int chestTraining = 0;
+            int legTraining = 0;
+            int absTraining = 0;
+            int proteinShake = 0;
+            int proteinBar = 0;
+            int peopleTrained = 0;
+            int peopleBoughtProtein = 0;
+
+
+            for (int i = 0; i < count; i++)
+            {
+                string activity = Console.ReadLine();
+
+                if (activity == "Back")
+                {
+                    backTraining++;
+                    peopleTrained++;
+
+                }
+                else if (activity == "Chest")
+                {
+                    chestTraining++;
+                    peopleTrained++;
+                }
+                else if (activity == "Legs")
+                {
+                    legTraining++;
+                    peopleTrained++;
+                }
+                else if (activity == "Abs")
+                {
+                    absTraining++;
+                    peopleTrained++;
+                }
+                else if (activity == "Protein shake")
+                {
+                    proteinShake++;
+                    peopleBoughtProtein++;
+                }
+                else if (activity == "Protein bar")
+                {
+                    proteinBar++;
+                    peopleBoughtProtein++;
+                }
+
+            }
+
+            double percentageTrained = ((double)peopleTrained /(double)count) * 100;
+            double percentageBoughProtein = ((double)peopleBoughtProtein /(double)count) *100;
+
+            Console.WriteLine($"{backTraining} - back");
+            Console.WriteLine($"{chestTraining} - chest");
+            Console.WriteLine($"{legTraining} - legs");
+            Console.WriteLine($"{absTraining} - abs");
+            Console.WriteLine($"{proteinShake} - protein shake");
+            Console.WriteLine($"{proteinBar} - protein bar");
+            Console.WriteLine($"{percentageTrained:f2}% - work out");
+            Console.WriteLine($"{percentageBoughProtein:f2}% - protein");
+
+          
+
+
+        }
+    }
+}
