@@ -1,0 +1,26 @@
+using System;
+
+namespace ConsoleApp13
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double priceFlour=double.Parse(Console.ReadLine());
+            double kgFlour = double.Parse(Console.ReadLine());
+            double kgSugar = double.Parse(Console.ReadLine());
+            double packageEggs = double.Parse(Console.ReadLine());
+            double packageMaya = double.Parse(Console.ReadLine());
+
+            double priceSugar = priceFlour * 0.75;
+            double priceEggs = priceFlour * 1.10;
+            double priceMaya = priceSugar * 0.2;
+
+            double finalPrice = (priceSugar * kgSugar) + (priceMaya * packageMaya) + (priceEggs * packageEggs) + (priceFlour * kgFlour);
+
+            Console.WriteLine($"{finalPrice:f2}");
+
+
+        }
+    }
+}
