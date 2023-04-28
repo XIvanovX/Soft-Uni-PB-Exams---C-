@@ -1,0 +1,73 @@
+using System;
+
+namespace ConsoleApp13
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int eggsQuantityShop = int.Parse(Console.ReadLine());
+
+            string input = string.Empty;
+            bool isItClose=false;
+            int eggsSold = 0;
+            bool isItBigger = false;
+
+            while(input!="Close")
+            {
+
+                input = Console.ReadLine();
+                if (input == "Close")
+                {
+                    isItClose = true;
+                    break;
+                }
+
+
+
+                int eggsCount = int.Parse(Console.ReadLine());
+
+
+                
+                if(input=="Buy")
+                {
+                    if(eggsCount>eggsQuantityShop)
+                        {
+                        isItBigger = true;
+                        break;
+
+                    }
+                    eggsQuantityShop-=eggsCount;
+                    eggsSold += eggsCount;
+                }
+                else if(input=="Fill")
+                {
+                    eggsQuantityShop += eggsCount;
+                }
+
+
+
+
+            }
+
+
+            if(isItClose)
+            {
+                Console.WriteLine("Store is closed!");
+                Console.WriteLine($"{eggsSold} eggs sold.");
+            }
+
+            else if(isItBigger)
+            {
+                Console.WriteLine("Not enough eggs in store!");
+                Console.WriteLine($"You can buy only {eggsQuantityShop}.");
+            }
+
+
+
+           
+
+        }
+    }
+}
