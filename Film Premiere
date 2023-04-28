@@ -1,0 +1,85 @@
+using System;
+
+namespace ConsoleApp13
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+          
+            string projection=Console.ReadLine();
+            string package = Console.ReadLine();
+            int ticketsCount = int.Parse(Console.ReadLine());
+
+            double price = 0;
+
+            switch(projection)
+            {
+                case "John Wick":
+                    switch(package)
+                    {
+                        case "Drink":
+                            price = 12;
+                            break;
+                        case "Popcorn":
+                            price = 15;
+                            break;
+                        case "Menu":
+                            price = 19;
+                            break;
+
+                    }
+                    break;
+                case "Star wars":
+                    switch (package)
+                    {
+                        case "Drink":
+                            price = 18;
+                            break;
+                        case "Popcorn":
+                            price = 25;
+                            break;
+                        case "Menu":
+                            price = 30;
+                            break;
+
+                    }
+                    break;
+
+                case "Jumanji":
+                    switch (package)
+                    {
+                        case "Drink":
+                            price = 9;
+                            break;
+                        case "Popcorn":
+                            price = 11;
+                            break;
+                        case "Menu":
+                            price = 14;
+                            break;
+
+                    }
+                    break;
+                    break;
+
+                    break;
+
+
+            }
+
+           double sumPrice=ticketsCount*price;
+
+            if (projection == "Star Wars" && ticketsCount >= 4)
+            {
+                sumPrice *= 0.7;
+            }
+            if(projection=="Jumanji" && ticketsCount==2)
+            {
+                sumPrice *= 0.85;  
+            }
+
+            Console.WriteLine($"Your bill is {sumPrice:f2} leva.");
+        }
+    }
+}
