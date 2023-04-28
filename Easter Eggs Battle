@@ -1,0 +1,69 @@
+using System;
+
+namespace ConsoleApp13
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstPlayerEggs = int.Parse(Console.ReadLine());
+            int secondPlayerEggs=int.Parse(Console.ReadLine());
+
+            string input = string.Empty;
+
+            bool isPlayerOneWinner = false;
+
+            while(input!="End")
+            {
+                input = Console.ReadLine();
+                if(input=="End")
+                {
+                    break;
+                }
+
+                
+
+                if(input=="one")
+                {
+                    secondPlayerEggs--;
+                }
+                else if(input=="two")
+                {
+                    firstPlayerEggs--;
+                }
+
+
+                if (secondPlayerEggs == 0)
+                {
+                    isPlayerOneWinner = true;
+                    break;
+                }
+                else if (firstPlayerEggs == 0)
+                {
+                    break;
+                }
+
+               
+            }
+            if (input == "End")
+            {
+                Console.WriteLine($"Player one has {firstPlayerEggs} eggs left.");
+                Console.WriteLine($"Player two has {secondPlayerEggs} eggs left.");
+            }
+
+
+
+           else  if (isPlayerOneWinner)
+            {
+                Console.WriteLine($"Player two is out of eggs. Player one has {firstPlayerEggs} eggs left.");
+            }
+            else 
+                {
+                Console.WriteLine($"Player one is out of eggs. Player two has {secondPlayerEggs} eggs left.");
+            }
+
+           
+
+        }
+    }
+}
